@@ -14,7 +14,7 @@ class LyricsPane extends StatelessWidget {
         ? const Padding(
             padding: const EdgeInsets.only(top: 16),
             child: const Text(
-              'No lyrics available.',
+              '가사가 없습니다.',
               style: const TextStyle(color: Colors.white54),
             ),
           )

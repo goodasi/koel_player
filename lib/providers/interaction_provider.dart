@@ -6,6 +6,7 @@ import 'package:app/utils/api_request.dart';
 import 'package:audio_service/audio_service.dart';
 import 'package:flutter/foundation.dart';
 
+//음악 컨트롤 할때 호출
 class InteractionProvider with ChangeNotifier, StreamSubscriber {
   late final SongProvider _songProvider;
   late final RecentlyPlayedProvider _recentlyPlayedProvider;

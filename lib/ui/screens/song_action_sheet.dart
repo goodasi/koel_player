@@ -76,7 +76,7 @@ class _SongActionSheetState extends State<SongActionSheet> {
               children: <Widget>[
                 if (!isCurrent)
                   SongActionButton(
-                    text: 'Play Next',
+                    text: '다음 재생',
                     icon: const Icon(
                       CupertinoIcons.arrow_right_circle_fill,
                       color: Colors.white30,
@@ -86,14 +86,14 @@ class _SongActionSheetState extends State<SongActionSheet> {
                       showOverlay(
                         context,
                         icon: CupertinoIcons.arrow_right_circle_fill,
-                        caption: 'Queued',
-                        message: 'Song to be played next.',
+                        caption: '대기열',
+                        message: '다음 대기열에 추가되었습니다.',
                       );
                     },
                   ),
                 if (!isCurrent)
                   SongActionButton(
-                    text: 'Play Last',
+                    text: '마지막 재생',
                     icon: const Icon(
                       CupertinoIcons.arrow_down_right_circle_fill,
                       color: Colors.white30,
@@ -103,14 +103,14 @@ class _SongActionSheetState extends State<SongActionSheet> {
                       showOverlay(
                         context,
                         icon: CupertinoIcons.arrow_down_right_circle_fill,
-                        caption: 'Queued',
-                        message: 'Song queued to bottom.',
+                        caption: '대기열',
+                        message: '마지막 대기열에 추가되었습니다.',
                       );
                     },
                   ),
                 if (_queued)
                   SongActionButton(
-                    text: 'Remove from Queue',
+                    text: '대기열에서 제거',
                     icon: const Icon(
                       CupertinoIcons.text_badge_minus,
                       color: Colors.white30,
@@ -120,14 +120,14 @@ class _SongActionSheetState extends State<SongActionSheet> {
                       showOverlay(
                         context,
                         icon: CupertinoIcons.text_badge_minus,
-                        caption: 'Removed',
-                        message: 'Song removed from queue.',
+                        caption: '제거됨',
+                        message: '대기열에서 제거 되었습니다.',
                       );
                     },
                   ),
                 SongActionButton(
                   enabled: !inOfflineMode,
-                  text: song.liked ? 'Remove as Favorite' : 'Mark as Favorite',
+                  text: song.liked ? '즐겨찾기 제거' : '즐겨찾기 추가',
                   icon: Icon(
                     song.liked
                         ? CupertinoIcons.heart_fill
@@ -137,10 +137,10 @@ class _SongActionSheetState extends State<SongActionSheet> {
                   onTap: () {
                     showOverlay(
                       context,
-                      caption: song.liked ? 'Unliked' : 'Liked',
+                      caption: song.liked ? '제거됨' : '추가됨',
                       message: song.liked
-                          ? 'Song removed from Favorites.'
-                          : 'Song added to Favorites.',
+                          ? '즐겨찾기에서 제거 되었습니다.'
+                          : '즐겨찾기에 추가 되었습니다.',
                       icon: song.liked
                           ? CupertinoIcons.heart_slash
                           : CupertinoIcons.heart_fill,
@@ -151,7 +151,7 @@ class _SongActionSheetState extends State<SongActionSheet> {
                 const Divider(indent: 16, endIndent: 16),
                 SongActionButton(
                   enabled: !inOfflineMode,
-                  text: 'Go to Album',
+                  text: '앨범 보기',
                   icon: const Icon(
                     CupertinoIcons.music_albums_fill,
                     color: Colors.white30,
@@ -167,7 +167,7 @@ class _SongActionSheetState extends State<SongActionSheet> {
                 ),
                 SongActionButton(
                   enabled: !inOfflineMode,
-                  text: 'Go to Artist',
+                  text: '가수 보기',
                   icon: const Icon(
                     CupertinoIcons.music_mic,
                     color: Colors.white30,
@@ -184,7 +184,7 @@ class _SongActionSheetState extends State<SongActionSheet> {
                 const Divider(indent: 16, endIndent: 16),
                 SongActionButton(
                   enabled: !inOfflineMode,
-                  text: 'Add to a Playlist…',
+                  text: '재생목록에 추가…',
                   icon: const Icon(
                     CupertinoIcons.text_badge_plus,
                     color: Colors.white30,

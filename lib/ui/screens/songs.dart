@@ -11,6 +11,10 @@ import 'package:flutter/material.dart' hide AppBar;
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:provider/provider.dart';
 
+
+/*
+* 모든 곡 리스트
+*/
 class SongsScreen extends StatefulWidget {
   static const routeName = '/songs';
 
@@ -123,7 +127,7 @@ class _SongsScreenState extends State<SongsScreen> {
               controller: _scrollController,
               slivers: [
                 AppBar(
-                  headingText: 'All songs',
+                  headingText: '모든 곡',
                   actions: [
                     SortButton(
                       fields: ['title', 'artist_name', 'created_at'],

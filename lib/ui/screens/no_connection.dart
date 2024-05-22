@@ -72,8 +72,8 @@ class _NoConnectionScreenState extends State<NoConnectionScreen>
                   spacing: 4.0,
                   crossAxisAlignment: WrapCrossAlignment.center,
                   children: [
-                    Text('You are offline.'),
-                    Text('Please connect to the internet and try again.')
+                    Text('오프라인 상태입니다.'),
+                    Text('인터넷에서 접속후 다시 시도해 주세요.')
                   ],
                 ),
                 ElevatedButton(
@@ -83,7 +83,7 @@ class _NoConnectionScreenState extends State<NoConnectionScreen>
                       MainScreen.routeName,
                     );
                   },
-                  child: const Text('View downloaded songs'),
+                  child: const Text('다운로드한 곡 보기'),
                 ),
               ],
             ),

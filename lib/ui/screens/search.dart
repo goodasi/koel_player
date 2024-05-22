@@ -38,7 +38,7 @@ class _SearchScreenState extends State<SearchScreen> {
   }
 
   _search(String keywords) => EasyDebounce.debounce(
-        'search',
+        '검색',
         const Duration(microseconds: 500), // typing on a phone isn't that fast
         () async {
           if (keywords.length == 0) return _resetSearch();
@@ -61,7 +61,7 @@ class _SearchScreenState extends State<SearchScreen> {
     return const Padding(
       padding: EdgeInsets.only(left: AppDimensions.hPadding),
       child: Text(
-        'None found.',
+        '없습니다.',
         style: TextStyle(color: Colors.white54),
       ),
     );
@@ -86,7 +86,7 @@ class _SearchScreenState extends State<SearchScreen> {
                 color: Colors.white10,
                 borderRadius: AppDimensions.inputBorderRadius,
               ),
-              placeholder: 'Search your library',
+              placeholder: '검색어를 입력하세요.',
               onChanged: _search,
               onSuffixTap: _resetSearch,
             ),
@@ -102,7 +102,7 @@ class _SearchScreenState extends State<SearchScreen> {
                   _focusNode.unfocus();
                 },
                 child: Text(
-                  'Cancel',
+                  '취소',
                   style: TextStyle(color: AppColors.white.withOpacity(.7)),
                 ),
               ),
@@ -133,7 +133,7 @@ class _SearchScreenState extends State<SearchScreen> {
                           padding: const EdgeInsets.only(
                             left: AppDimensions.hPadding,
                           ),
-                          child: const Heading5(text: 'Albums'),
+                          child: const Heading5(text: '앨범'),
                         ),
                         if (_albums.isEmpty)
                           noResults
@@ -148,7 +148,7 @@ class _SearchScreenState extends State<SearchScreen> {
                           padding: const EdgeInsets.only(
                             left: AppDimensions.hPadding,
                           ),
-                          child: const Heading5(text: 'Artists'),
+                          child: const Heading5(text: '가수'),
                         ),
                         if (_artists.isEmpty)
                           noResults

@@ -25,7 +25,7 @@ class ArtistInfoPane extends StatelessWidget {
           vertical: AppDimensions.hPadding,
         ),
         child: Text(
-          'No artist information available.',
+          '정보가 없습니다.',
           style: const TextStyle(color: Colors.white54),
         ),
       );

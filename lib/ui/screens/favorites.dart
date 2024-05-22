@@ -71,7 +71,7 @@ class _FavoritesScreenState extends State<FavoritesScreen> {
               ),
               const SizedBox(height: 16.0),
               Text(
-                'No favorites',
+                '즐겨찾기가 없습니다.',
                 style: Theme.of(context).textTheme.headlineSmall,
               ),
               const SizedBox(height: 16.0),
@@ -131,7 +131,7 @@ class _FavoritesScreenState extends State<FavoritesScreen> {
                       ? <Widget>[emptyWidget]
                       : <Widget>[
                           AppBar(
-                            headingText: 'Favorites',
+                            headingText: '즐겨찾기',
                             coverImage: cover,
                             actions: [
                               SortButton(

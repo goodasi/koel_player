@@ -25,7 +25,7 @@ class AlbumInfoPane extends StatelessWidget {
           vertical: AppDimensions.hPadding,
         ),
         child: Text(
-          'No album information available.',
+          '앨범 정보가 없습니다.',
           style: const TextStyle(color: Colors.white54),
         ),
       );
@@ -70,7 +70,7 @@ class AlbumInfoPane extends StatelessWidget {
               const Padding(
                 padding: const EdgeInsets.only(top: 16),
                 child: const Text(
-                  'No album information available.',
+                  '앨범 정보가 없습니다.',
                   style: const TextStyle(color: Colors.white54),
                 ),
               )

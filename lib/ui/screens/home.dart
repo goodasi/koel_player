@@ -56,12 +56,12 @@ class _HomeScreenState extends State<HomeScreen> {
         final blocks = <Widget>[
           if (overviewProvider.mostPlayedSongs.isNotEmpty)
             HorizontalCardScroller(
-              headingText: 'Most played songs',
+              headingText: '인기 곡',
               cards: <Widget>[
                 ...overviewProvider.mostPlayedSongs
                     .map((song) => SongCard(song: song)),
                 PlaceholderCard(
-                  icon: CupertinoIcons.music_note,
+                  icon: CupertinoIcons.music_note,                 
                   onPressed: () => Navigator.of(context).push(
                     CupertinoPageRoute(builder: (_) => SongsScreen()),
                   ),
@@ -70,7 +70,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           if (overviewProvider.mostPlayedAlbums.isNotEmpty)
             HorizontalCardScroller(
-              headingText: 'Top albums',
+              headingText: '인기 앨범',
               cards: <Widget>[
                 ...overviewProvider.mostPlayedAlbums
                     .map((album) => AlbumCard(album: album)),
@@ -84,7 +84,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           if (overviewProvider.mostPlayedArtists.isNotEmpty)
             HorizontalCardScroller(
-              headingText: 'Top artists',
+              headingText: '인기 가수',
               cards: <Widget>[
                 ...overviewProvider.mostPlayedArtists
                     .map((artist) => ArtistCard(artist: artist)),
@@ -118,7 +118,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     ? [SliverToBoxAdapter(child: const EmptyHomeScreen())]
                     : <Widget>[
                         CupertinoSliverNavigationBar(
-                          largeTitle: const LargeTitle(text: 'Home'),
+                          largeTitle: const LargeTitle(text: '홈'),
                           trailing: Row(
                             mainAxisSize: MainAxisSize.min,
                             children: [
@@ -200,12 +200,12 @@ class EmptyHomeScreen extends StatelessWidget {
             ),
             const SizedBox(height: 16),
             const Text(
-              'No activities… yet',
+              '아직 없습니다…',
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
             ),
             const SizedBox(height: 8),
             const Text(
-              'Pull down to refresh this screen.',
+              '새로고침 하려면 아래로 끌어내리세요.',
               style: TextStyle(fontSize: 14),
             ),
           ],

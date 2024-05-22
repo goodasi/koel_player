@@ -101,15 +101,15 @@ class _MainScreenState extends State<MainScreen> {
                       border: Border(top: Divider.createBorderSide(context)),
                       items: <BottomNavigationBarItem>[
                         tabBarItem(
-                          title: 'Home',
+                          title: '홈',
                           icon: CupertinoIcons.house_fill,
                         ),
                         tabBarItem(
-                          title: 'Search',
+                          title: '검색',
                           icon: CupertinoIcons.search,
                         ),
                         tabBarItem(
-                          title: 'Library',
+                          title: '라이브러리',
                           icon: CupertinoIcons.music_albums_fill,
                         ),
                       ],
@@ -182,7 +182,7 @@ class _ConnectivityInfoBoxState extends State<ConnectivityInfoBox>
                         size: 20,
                       ),
                       const Text(
-                        'No internet connection',
+                        '인터넷 연결이 안되어 있습니다.',
                         style: TextStyle(color: Colors.white54),
                       ),
                     ]),
@@ -207,7 +207,7 @@ class _ConnectivityInfoBoxState extends State<ConnectivityInfoBox>
                     size: 20,
                   ),
                   label: const Text(
-                    'Connection restored! Tap to refresh.',
+                    '접속되었습니다! 새로고침 해주세요.',
                     style: TextStyle(color: AppColors.white, fontSize: 14.0),
                   ),
                 ),

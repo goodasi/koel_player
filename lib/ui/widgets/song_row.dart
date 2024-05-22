@@ -7,6 +7,8 @@ import 'package:audio_service/audio_service.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:app/providers/providers.dart';
+import 'package:provider/provider.dart';
 
 class SongRow extends StatefulWidget {
   final Song song;
@@ -35,7 +37,7 @@ class _SongRowState extends State<SongRow> {
   @override
   Widget build(BuildContext context) {
     late String subtitle;
-
+   
     switch (widget.listContext) {
       case SongListContext.album:
       case SongListContext.artist:
@@ -153,7 +155,7 @@ class SongRowTrailingActions extends StatelessWidget {
   final Song song;
   final int index;
   final AppRouter router;
-
+  
   const SongRowTrailingActions({
     Key? key,
     required this.song,
@@ -167,7 +169,19 @@ class SongRowTrailingActions extends StatelessWidget {
     return Row(
       mainAxisSize: MainAxisSize.min,
       children: <Widget>[
-        if (listContext != SongListContext.downloads) SongCacheIcon(song: song),
+        //if (listContext != SongListContext.downloads) SongCacheIcon(song: song), //다운로드 아이콘
+        Consumer<FavoriteProvider>(
+          builder: (context, favoriteProvider, child) {
+            return IconButton(
+              icon: Icon(
+                song.liked
+                    ? CupertinoIcons.heart_fill
+                    : CupertinoIcons.heart,
+                color: Colors.white30,
+              ), onPressed: () { favoriteProvider.toggleOne(song: song); },
+            );
+          }
+        ),        
         if (listContext == SongListContext.queue)
           // In a queue, the trailing control is the Drag icon
           // In other "standard" queues, it's the Actions menu trigger

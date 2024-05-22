@@ -53,9 +53,9 @@ class _InfoSheetState extends State<InfoSheet> {
               elevation: 0,
               bottom: const TabBar(
                 tabs: [
-                  Tab(text: 'Lyrics'),
-                  Tab(text: 'Artist'),
-                  Tab(text: 'Album'),
+                  Tab(text: '가사'),
+                  Tab(text: '가수'),
+                  Tab(text: '앨범'),
                 ],
               ),
             ),

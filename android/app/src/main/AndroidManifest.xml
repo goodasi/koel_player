@@ -2,7 +2,7 @@
     package="phanan.koel.app">
 
     <application
-        android:label="Koel"
+        android:label="뭉클"
         android:icon="@mipmap/ic_launcher"
         android:usesCleartextTraffic="true">
         <activity

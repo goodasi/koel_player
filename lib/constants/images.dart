@@ -7,7 +7,7 @@ import 'package:path_provider/path_provider.dart';
 class AppImages {
   AppImages._();
 
-  static const defaultImageAssetName = 'assets/images/default-image.webp';
+  static const defaultImageAssetName = 'assets/images/default-image.png';
   static Uri? _defaultArtUri;
 
   static const defaultImage = const Image(
@@ -23,7 +23,7 @@ class AppImages {
         final content = await rootBundle.load(defaultImageAssetName);
         final bytes = content.buffer.asUint8List();
         final documentDir = await getApplicationDocumentsDirectory();
-        final filePath = '${documentDir.path}/default-image.webp';
+        final filePath = '${documentDir.path}/default-image.png';
 
         _defaultArtUri = (await File(filePath).writeAsBytes(bytes)).uri;
       } catch (_) {}

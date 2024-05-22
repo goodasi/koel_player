@@ -115,7 +115,7 @@ class _SongListHeaderState extends State<SongListHeader> {
             widget.onSearchCollapsed?.call();
           },
           child: Text(
-            'Cancel',
+            '취소',
             style: TextStyle(color: AppColors.white.withOpacity(.7)),
           ),
         ),

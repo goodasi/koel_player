@@ -103,7 +103,7 @@ class _AlbumsScreenState extends State<AlbumsScreen> {
                     slivers: <Widget>[
                       const CupertinoSliverNavigationBar(
                         backgroundColor: AppColors.screenHeaderBackground,
-                        largeTitle: LargeTitle(text: 'Albums'),
+                        largeTitle: LargeTitle(text: '앨범'),
                       ),
                       SliverList(
                         delegate: SliverChildBuilderDelegate(

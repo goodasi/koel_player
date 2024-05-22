@@ -22,46 +22,46 @@ class LibraryScreen extends StatelessWidget {
       tiles: <Widget>[
         LibraryMenuItem(
           icon: CupertinoIcons.music_note,
-          label: 'Songs',
+          label: '곡',
           onTap: () => Navigator.of(context).push(
             CupertinoPageRoute(builder: (_) => const SongsScreen()),
           ),
         ),
         LibraryMenuItem(
           icon: CupertinoIcons.heart_fill,
-          label: 'Favorites',
+          label: '즐겨찾기',
           onTap: () => Navigator.of(context).push(
             CupertinoPageRoute(builder: (_) => const FavoritesScreen()),
           ),
         ),
         LibraryMenuItem(
           icon: CupertinoIcons.music_note_list,
-          label: 'Playlists',
+          label: '재생목록',
           onTap: () => Navigator.of(context).push(
             CupertinoPageRoute(builder: (_) => const PlaylistsScreen()),
           ),
         ),
         LibraryMenuItem(
           icon: CupertinoIcons.music_mic,
-          label: 'Artists',
+          label: '가수',
           onTap: () => Navigator.of(context).push(
             CupertinoPageRoute(builder: (_) => const ArtistsScreen()),
           ),
         ),
         LibraryMenuItem(
           icon: CupertinoIcons.music_albums,
-          label: 'Albums',
+          label: '앨범',
           onTap: () => Navigator.of(context).push(
             CupertinoPageRoute(builder: (_) => const AlbumsScreen()),
           ),
         ),
-        LibraryMenuItem(
-          icon: CupertinoIcons.cloud_download_fill,
-          label: 'Downloaded',
-          onTap: () => Navigator.of(context).push(
-            CupertinoPageRoute(builder: (_) => DownloadedScreen()),
-          ),
-        ),
+        // LibraryMenuItem(
+        //   icon: CupertinoIcons.cloud_download_fill,
+        //   label: 'Downloaded',
+        //   onTap: () => Navigator.of(context).push(
+        //     CupertinoPageRoute(builder: (_) => DownloadedScreen()),
+        //   ),
+        // ),
       ],
     ).toList();
 

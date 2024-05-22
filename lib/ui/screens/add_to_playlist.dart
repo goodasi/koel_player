@@ -51,8 +51,8 @@ class AddToPlaylistScreen extends StatelessWidget {
                           showOverlay(
                             context,
                             icon: CupertinoIcons.text_badge_plus,
-                            caption: 'Added',
-                            message: 'Song added to playlist.',
+                            caption: '추가됨',
+                            message: '플레이리스트에 추가되었습니다.',
                           );
                         },
                       );
@@ -66,7 +66,7 @@ class AddToPlaylistScreen extends StatelessWidget {
           },
           child: CupertinoSliverNavigationBar(
             backgroundColor: AppColors.screenHeaderBackground,
-            largeTitle: const LargeTitle(text: 'Add to a Playlist'),
+            largeTitle: const LargeTitle(text: '플레이리스트에 추가'),
             trailing: IconButton(
               onPressed: () => router.showCreatePlaylistSheet(context),
               icon: const Icon(CupertinoIcons.add_circled),

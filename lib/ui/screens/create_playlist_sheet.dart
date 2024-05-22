@@ -64,7 +64,7 @@ class _AddPlaylistScreenState extends State<CreatePlaylistSheet> {
 
       if (ok) {
         Navigator.of(context).pop();
-        showOverlay(context, caption: 'Playlist added');
+        showOverlay(context, caption: '재생목록이 추가되었습니다.');
       } else {
         showCupertinoDialog(
           context: context,
@@ -72,11 +72,11 @@ class _AddPlaylistScreenState extends State<CreatePlaylistSheet> {
             return CupertinoAlertDialog(
               title: const Text('Uh oh'),
               content: const Text(
-                'Something wrong happened. Please try again.',
+                '잘못되었습니다. 다시 시도해 보세요.',
               ),
               actions: <Widget>[
                 CupertinoDialogAction(
-                  child: const Text('OK'),
+                  child: const Text('확인'),
                   onPressed: () => Navigator.pop(context),
                 ),
               ],
@@ -111,7 +111,7 @@ class _AddPlaylistScreenState extends State<CreatePlaylistSheet> {
                   enabledBorder: inputBorder,
                   focusedBorder: inputBorder,
                   fillColor: Colors.transparent,
-                  hintText: 'Playlist name',
+                  hintText: '재생목록 이름',
                 ),
               ),
               const SizedBox(height: 24.0),
@@ -120,7 +120,7 @@ class _AddPlaylistScreenState extends State<CreatePlaylistSheet> {
                   : ElevatedButton(
                       key: CreatePlaylistSheet.submitButtonKey,
                       onPressed: _enabled ? () async => await submit() : null,
-                      child: const Text('Save'),
+                      child: const Text('저장'),
                     ),
             ],
           ),
