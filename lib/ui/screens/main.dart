@@ -77,8 +77,8 @@ class _MainScreenState extends State<MainScreen> {
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: [
-                          const MiniPlayer(),
-                          const ConnectivityInfoBox(),
+                          const MiniPlayer(), //최근 재생곡
+                          //const ConnectivityInfoBox(), //유저 아이콘
                         ],
                       ),
                     ),
@@ -109,7 +109,7 @@ class _MainScreenState extends State<MainScreen> {
                           icon: CupertinoIcons.search,
                         ),
                         tabBarItem(
-                          title: '라이브러리',
+                          title: '보관함',
                           icon: CupertinoIcons.music_albums_fill,
                         ),
                       ],

@@ -102,88 +102,97 @@ class _SongsScreenState extends State<SongsScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: GradientDecoratedContainer(
-        child: Consumer<SongListScreenProvider>(
-          builder: (_, provider, __) {
-            if (provider.songs.isEmpty) {
-              if (_loading) return const SongListScreenPlaceholder();
-              if (_errored) return OopsBox(onRetry: makeRequest);
-            }
+    return PopScope( //이 위젯이 뒤로가기를 제어한다.
+      canPop: false,
+      onPopInvokedWithResult: (bool didPop, Object? result) {
+        if (didPop) {          
+          return;
+        }        
+        Navigator.of(context).pop();
+      },
+      child: Scaffold(
+        body: GradientDecoratedContainer(
+          child: Consumer<SongListScreenProvider>(
+            builder: (_, provider, __) {
+              if (provider.songs.isEmpty) {
+                if (_loading) return const SongListScreenPlaceholder();
+                if (_errored) return OopsBox(onRetry: makeRequest);
+              }
 
-            if (_cover.isEmpty) {
-              _cover = CoverImageStack(songs: provider.songs);
-            }
+              if (_cover.isEmpty) {
+                _cover = CoverImageStack(songs: provider.songs);
+              }
 
-            var displayedSongs = provider.songs;
+              var displayedSongs = provider.songs;
 
-            if (_inSearchMode) {
-              // In search mode, sorting is done from the client side.
-              displayedSongs =
-                  displayedSongs.$sort(_paginationConfig.sortConfig);
-            }
+              if (_inSearchMode) {
+                // In search mode, sorting is done from the client side.
+                displayedSongs =
+                    displayedSongs.$sort(_paginationConfig.sortConfig);
+              }
 
-            return CustomScrollView(
-              controller: _scrollController,
-              slivers: [
-                AppBar(
-                  headingText: '모든 곡',
-                  actions: [
-                    SortButton(
-                      fields: ['title', 'artist_name', 'created_at'],
-                      currentField: _paginationConfig.sortField,
-                      currentOrder: _paginationConfig.sortOrder,
-                      onMenuItemSelected: (sortConfig) {
-                        setState(() {
-                          _paginationConfig.sortField = sortConfig.field;
-                          _paginationConfig.sortOrder = sortConfig.order;
-                        });
+              return CustomScrollView(
+                controller: _scrollController,
+                slivers: [
+                  AppBar(
+                    headingText: '모든 곡',
+                    actions: [
+                      SortButton(
+                        fields: ['title', 'artist_name', 'created_at'],
+                        currentField: _paginationConfig.sortField,
+                        currentOrder: _paginationConfig.sortOrder,
+                        onMenuItemSelected: (sortConfig) {
+                          setState(() {
+                            _paginationConfig.sortField = sortConfig.field;
+                            _paginationConfig.sortOrder = sortConfig.order;
+                          });
 
-                        if (_inSearchMode) return;
+                          if (_inSearchMode) return;
 
-                        // If we're not searching but displaying the full list,
-                        // every time we sort, we fetch a new list of songs,
-                        // since the sorting is done from the server.
-                        provider.songs.clear();
+                          // If we're not searching but displaying the full list,
+                          // every time we sort, we fetch a new list of songs,
+                          // since the sorting is done from the server.
+                          provider.songs.clear();
+                          makeRequest();
+                        },
+                      ),
+                    ],
+                    coverImage: _cover,
+                  ),
+                  SliverToBoxAdapter(
+                    child: SongListHeader(
+                      sortField: _paginationConfig.sortField,
+                      sortOrder: _paginationConfig.sortOrder,
+                      onSearchExpanded: () =>
+                          setState(() => _inSearchMode = true),
+                      onSearchCollapsed: () => setState(
+                        () => _inSearchMode = false,
+                      ),
+                      onSearchQueryChanged: (query) {
+                        setState(() => _searchQuery = query);
                         makeRequest();
                       },
                     ),
-                  ],
-                  coverImage: _cover,
-                ),
-                SliverToBoxAdapter(
-                  child: SongListHeader(
-                    sortField: _paginationConfig.sortField,
-                    sortOrder: _paginationConfig.sortOrder,
-                    onSearchExpanded: () =>
-                        setState(() => _inSearchMode = true),
-                    onSearchCollapsed: () => setState(
-                      () => _inSearchMode = false,
-                    ),
-                    onSearchQueryChanged: (query) {
-                      setState(() => _searchQuery = query);
-                      makeRequest();
-                    },
                   ),
-                ),
-                SliverSongList(
-                  songs: displayedSongs,
-                  listContext: BaseSongListHeader.SongListContext.allSongs,
-                ),
-                _loading
-                    ? SliverToBoxAdapter(
-                        child: Container(
-                          height: 72,
-                          child: const Center(child: const Spinner(size: 16)),
-                        ),
-                      )
-                    : const SliverToBoxAdapter(),
-                const BottomSpace(),
-              ],
-            );
-          },
+                  SliverSongList(
+                    songs: displayedSongs,
+                    listContext: BaseSongListHeader.SongListContext.allSongs,
+                  ),
+                  _loading
+                      ? SliverToBoxAdapter(
+                          child: Container(
+                            height: 72,
+                            child: const Center(child: const Spinner(size: 16)),
+                          ),
+                        )
+                      : const SliverToBoxAdapter(),
+                  const BottomSpace(),
+                ],
+              );
+            },
+          ),
         ),
-      ),
+      )
     );
   }
 }

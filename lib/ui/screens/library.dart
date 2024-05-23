@@ -73,7 +73,7 @@ class LibraryScreen extends StatelessWidget {
             slivers: <Widget>[
               const CupertinoSliverNavigationBar(
                 backgroundColor: AppColors.screenHeaderBackground,
-                largeTitle: const LargeTitle(text: 'Library'),
+                largeTitle: const LargeTitle(text: '보관함'),
               ),
               SliverPadding(
                 padding: const EdgeInsets.symmetric(horizontal: 0.0),
@@ -89,7 +89,7 @@ class LibraryScreen extends StatelessWidget {
                   0,
                 ),
                 sliver: SliverToBoxAdapter(
-                  child: const Heading5(text: 'Recently added'),
+                  child: const Heading5(text: '최근곡'),
                 ),
               ),
               recentlyAddedSongs.isEmpty
@@ -103,7 +103,7 @@ class LibraryScreen extends StatelessWidget {
                   0,
                 ),
                 sliver: SliverToBoxAdapter(
-                  child: const Heading5(text: 'Most played'),
+                  child: const Heading5(text: '많이 들은곡'),
                 ),
               ),
               mostPlayedSongs.isEmpty

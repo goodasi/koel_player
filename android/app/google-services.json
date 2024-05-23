@@ -1,0 +1,70 @@
+{
+  "project_info": {
+    "project_number": "601348677226",
+    "firebase_url": "https://songgain-player.firebaseio.com",
+    "project_id": "songgain-player",
+    "storage_bucket": "songgain-player.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:601348677226:android:d98d345a6ee70ef7c73413",
+        "android_client_info": {
+          "package_name": "com.atojsoft.mungkle"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "601348677226-t4he3u3qfdnrh55702hmahdpeec50vnh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCw31jPJE5kJB2yk0gMfFVpKK3hCWgcSdk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "601348677226-t4he3u3qfdnrh55702hmahdpeec50vnh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:601348677226:android:cf057a925d252372",
+        "android_client_info": {
+          "package_name": "com.atojsoft.songgainvideoplayer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "601348677226-t4he3u3qfdnrh55702hmahdpeec50vnh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCw31jPJE5kJB2yk0gMfFVpKK3hCWgcSdk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "601348677226-t4he3u3qfdnrh55702hmahdpeec50vnh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      },
+      "admob_app_id": "ca-app-pub-2733199527567768~1158735512"
+    }
+  ],
+  "configuration_version": "1"
+}

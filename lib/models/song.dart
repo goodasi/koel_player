@@ -106,7 +106,7 @@ class Song {
     return image is CachedNetworkImageProvider &&
         !(image as CachedNetworkImageProvider)
             .url
-            .endsWith('/default-image.png');
+            .endsWith('/default-image.webp');
   }
 
   Song merge(Song target) {

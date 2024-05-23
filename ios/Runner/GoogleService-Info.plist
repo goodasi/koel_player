@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>API_KEY</key>
+	<string>AIzaSyAcCRIqLS9jechh19MIpqAn3lrq47bE7E4</string>
+	<key>GCM_SENDER_ID</key>
+	<string>601348677226</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>dev.koel.koel</string>
+	<key>PROJECT_ID</key>
+	<string>songgain-player</string>
+	<key>STORAGE_BUCKET</key>
+	<string>songgain-player.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:601348677226:ios:edcf90b1cc106c6fc73413</string>
+	<key>DATABASE_URL</key>
+	<string>https://songgain-player.firebaseio.com</string>
+</dict>
+</plist>
